@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
     @member = current_member
     if @event.active
-      Rsvp.create(member_id: @member.id, event_id: @event.id)
+      Rsvp.find_or_create_by(member_id: @member.id, event_id: @event.id)
       flash[:alert] = "RSVP successful. Event has been added to your calendar"
       redirect_to @event
     else
