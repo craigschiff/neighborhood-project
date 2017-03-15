@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
      end
 
      def prompt_rating
+       active_record = nil
        current_member.ratings.each do |rating|
          if !rating.complete
            active_rating = rating
