@@ -8,8 +8,6 @@ class Business < ApplicationRecord
 
   validates :name, presence: true
   validates :about, presence: true, length: {maximum: 255}
-  validates :name, presence: true
-  validates :phone, numericality: true, length:{ is: 10 }
   validates :location, presence: true
 
 
